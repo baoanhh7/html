@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .contener {
+            width: 100%;
+            height: auto;
+            display: flex;
+        }
+        /* CSS cho khối div chứa hình ảnh */
+        #mydiv {
+            float: left;
+            margin-left: 160px;
+            width: 588px;
+            height: 588px;
+            background-color: #f2f2f2;
+            padding: 19px 19px 19px 19px;
+            box-sizing: border-box;
+        }
+
+        /* CSS cho hình ảnh */
+        #myimg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* CSS cho cửa sổ modal */
+        #myModal {
+            display: none; /* Ban đầu cửa sổ modal được ẩn đi */
+            position: fixed; /* Vị trí của cửa sổ modal được cố định, không thay đổi khi cuộn trang */
+            z-index: 1; /* Độ cao của cửa sổ modal so với các phần tử khác trên trang */
+            padding-top: 100px; /* Khoảng cách từ đỉnh cửa sổ modal đến hình ảnh */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto; /* Nếu nội dung của cửa sổ modal vượt quá kích thước đã định, thanh cuộn sẽ xuất hiện */
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        /* CSS cho hình ảnh trong cửa sổ modal */
+        #img01 {
+            margin: auto; /* Căn giữa hình ảnh trong cửa sổ modal */
+            display: block; /* Hiển thị hình ảnh dưới dạng khối, chiếm toàn bộ hàng và ngắt hàng trước và sau nó */
+            width: auto; /* Chiều rộng tự động điều chỉnh để duy trì tỷ lệ khung hình gốc nếu chiều cao tối đa được áp dụng */
+            max-width: 100%; /* Giới hạn chiều rộng tối đa của hình ảnh là chiều rộng của cửa sổ modal */
+            max-height: 80%; /* Giới hạn chiều cao tối đa của hình ảnh là chiều cao của cửa sổ modal */
+        }
+
+        .title-sp {
+            width: 570px;
+            margin-left: 42px;
+            margin-right: 160px;
+        }
+
+        .star {
+            font-size: 20px; /* Kích thước của sao */
+            color: gold; /* Màu sắc ban đầu của sao */
+            cursor: pointer; /* Biến con trỏ chuột thành hình dạng tay khi di chuyển qua sao */
+        }
+
+        .stars p {
+            display: inline;
+            margin-left: 0;
+            width: 50%;
+        }
+
+        span.que {
+            margin-left: 0;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="contener">
+        <div id="mydiv">
+            <img id="myimg" src="https://shopdunk.com/images/thumbs/0020094_iphone-15-pro-max-128gb_550.jpeg" onclick="showImage(this);"> <!-- Hình ảnh, khi nhấp vào sẽ gọi hàm showImage() -->
+        </div>
+
+        <div id="myModal" onclick="this.style.display='none'">
+            <!-- Cửa sổ modal, khi nhấp vào ngoài hình ảnh sẽ được đóng lại -->
+            <span class="close">×</span>
+            <img class="modal-content" id="img01"> <!-- Hình ảnh phóng to trong cửa sổ modal -->
+        </div>
+
+        <script>
+
+        /* Hàm showImage() sẽ hiển thị cửa sổ modal và hình ảnh phóng to */
+        function showImage(img) {
+          var modal = document.getElementById("myModal"); /* Lấy phần tử có id là "myModal" */
+          var modalImg = document.getElementById("img01"); /* Lấy phần tử có id là "img01" */
+
+          modal.style.display = "block"; /* Hiển thị cửa sổ modal */
+          modalImg.src = img.src; /* Đặt đường dẫn của hình ảnh phóng to bằng với hình ảnh gốc */
+        }
+        </script>
+        <div class="title-sp">
+            <div class="Name-sp">
+                <h1>Iphone 15pro max 256GB</h1>
+            </div>
+            <div class="stars">
+                <!-- Khối chứa các sao -->
+                <span class="star">★</span> <!-- Mỗi sao là một phần tử <span>, khi nhấp vào sẽ gọi hàm rate() với giá trị tương ứng -->
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <p>danh gia</p>
+                <span class="que">|</span>
+            </div>
+            <div class="recomment">
+
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

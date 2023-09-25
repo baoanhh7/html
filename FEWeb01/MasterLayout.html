@@ -1,0 +1,382 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mater layout</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .contener {
+            background-color: white;
+        }
+
+        .Top-Menu {
+            /* Đặt màu nền của khối div thành màu xám */
+            background-color: rgb(70, 70, 70);
+            /* Sắp xếp các phần tử trong khối div theo hàng ngang */
+            display: flex;
+            /* Căn giữa các phần tử theo chiều ngang */
+            justify-content: space-between;
+            /* Căn giữa các phần tử theo chiều dọc */
+            align-items: center;
+            /* Đặt padding cho khối div, padding trái và phải là 160px, padding trên và dưới là 0 */
+            padding: 0 160px;
+        }
+
+        .header1 {
+            padding-right: 10px;
+        }
+
+        #Menu {
+            /* Chiều cao của thẻ nav là 64px */
+            height: 64px;
+            /* Cho phép thẻ nav mở rộng để chiếm toàn bộ không gian còn lại trong khối div */
+            flex-grow: 1;
+        }
+
+            #Menu > ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: space-between;
+            }
+
+                #Menu > ul > li {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-grow: 1;
+                    margin-right: 10px;
+                    height: 64px;
+                }
+
+                    #Menu > ul > li > a {
+                        color: white;
+                    }
+
+        .header1 {
+            padding-right: 10px;
+        }
+
+            .header1 img {
+                height: 45px;
+                width: 175px;
+                box-sizing: border-box;
+            }
+
+        .header2 > #language {
+            display: flex;
+            align-items: center;
+            padding: 0;
+        }
+
+            .header2 > #language div {
+                margin-right: 10px;
+            }
+
+        #search {
+            font-size: 20px;
+            color: #fffafa;
+        }
+
+        #cart {
+            font-size: 20px;
+            color: #fffafa;
+        }
+
+        #User-icon {
+            font-size: 18px;
+            color: #fffafa;
+        }
+
+        #myDiv {
+            width: auto;
+            height: 437px;
+            position: relative;
+        }
+
+            #myDiv img {
+                width: 100%;
+                height: 95%;
+                position: absolute;
+            }
+
+            #myDiv button {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                /* Thêm các thuộc tính để tạo nút hình tròn */
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: none;
+                background-color: rgba(191, 191, 191, 0.5);
+            }
+
+        #prev {
+            left: 10px; /* Đặt nút "Prev" vào trong khối div */
+        }
+
+        #next {
+            right: 10px; /* Đặt nút "Next" vào trong khối div */
+        }
+        /*footer and send email*/
+        .sent-Email {
+            width: 100%;
+            height: 142px;
+            margin: auto;
+            background-color: #f2f2f2;
+            padding: 50px 0 50px 0;
+        }
+
+        .Input-Email {
+            display: flex;
+            justify-content: space-between;
+            padding-left: 501px;
+            width: 570px;
+        }
+
+            .Input-Email input[type="email"] {
+                flex-grow: 1;
+                height: 40px;
+                width: 470px;
+                border-radius: 20px 0 0 20px;
+                border: none;
+                padding: 0 10px;
+                background-color: white;
+            }
+
+            .Input-Email button {
+                width: 100px;
+                height: 40px;
+                /* Bo tròn góc phải của nút đăng ký */
+                border-radius: 20px 20px 20px 20px;
+                border: none;
+                background-color: blue;
+                color: white;
+                /* Di chuyển nút đăng ký sang trái 50px để nằm trong thanh nhập email */
+                margin-left: -50px;
+            }
+
+        .bieuNgu > p {
+            text-align: center;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 24px;
+            color: #515154;
+            padding: 8px 0;
+            margin: 0;
+        }
+
+        .main-cont {
+            text-align: center;
+            font-weight: 700;
+            font-size: 24px;
+            color: #1D1D1F;
+            line-height: 36px;
+        }
+
+        #call {
+            float: right;
+            color: white;
+            align-items: center;
+            height: 28px;
+            width: 240px;
+            box-sizing: border-box;
+        }
+
+        #main > h3 {
+            width: 240px;
+            margin-top: 0;
+            color: white;
+            height: 21px;
+            float: right;
+            box-sizing: border-box;
+        }
+
+        .div-block2 > #main > h3 {
+            width: 180px;
+            float: right;
+        }
+
+        .footer p {
+            color: #d6d6d6;
+            font: 16px;
+            line-height: 30px;
+            margin: 20px 0;
+        }
+
+        .footer {
+            background-color: black;
+            padding: 64px 160px 120px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .div-block2 > #call {
+            width: 180px;
+            height: 28;
+        }
+
+        .div-block {
+            height: 344px;
+            width: 360px;
+        }
+
+        .div-block1 {
+            height: 344px;
+            width: 300px;
+        }
+
+        .div-block2 {
+            width: 240px;
+            height: 344px;
+        }
+
+        .div-block3 {
+            height: 344px;
+            width: 300px;
+        }
+
+        .Logo {
+            height: 48px;
+            width: 184px;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="contener">
+        <div class="Top-Menu">
+            <div class="header1"><img src="https://shopdunk.com/images/thumbs/0012445_Logo_ShopDunk.png"></div>
+            <nav id="Menu">
+                <ul>
+                    <li><a href="#home">Trang chủ</a></li>
+                    <li><a href="#news">Tin tức</a></li>
+                    <li><a href="#contact">Liên hệ</a></li>
+                    <li><a href="#about">Giới thiệu</a></li>
+                    <li><a href="#">Ipad</a></li>
+                    <li><a href="#">mac</a></li>
+                    <li><a href="#">Iphone</a></li>
+                    <li><a href="#">ariboc</a></li>
+                    <li><a href="#">khuyenmai</a></li>
+                </ul>
+            </nav>
+            <div class="header2">
+
+                <div id="language">
+                    <div id="search"><i class="fas fa-search"></i></div>
+                    <div id="cart"><i class="fas fa-shopping-cart"></i></div>
+                    <div id="User-icon"><i class="fas fa-user"></i></div>
+                    <div id="flag1"><img src="https://shopdunk.com/images/flags/vn.png" alt="VietNames"></div>
+                    <div id="flag1"><img src="https://shopdunk.com/images/flags/us.png" alt="english"></div>
+                </div>
+            </div>
+        </div>
+        <div id="myDiv">
+            <img src="https://shopdunk.com/images/uploaded/LINH%20CHERRYYYYYYY/danh%20m%E1%BB%A5c%20iphone%20ipad%20t7-10.jpg" alt="Image 1">
+            <img src="https://shopdunk.com/images/uploaded/LINH%20CHERRYYYYYYY/Danh%20m%E1%BB%A5c%20PC.jpg" alt="Image 2">
+            <img src="https://shopdunk.com/images/uploaded/banner/thang%209%202023/banner%20iphone%2015-2_Danh%20m%E1%BB%A5c.jpg" alt="Image 3">
+            <img src="https://shopdunk.com/images/uploaded/banner/thang%209%202023/37a68955a4b271ec28a3.jpg" alt="Image 4">
+
+            <button id="prev">&#8592;</button> <!-- Mũi tên trái -->
+            <button id="next">&#8594;</button> <!-- Mũi tên phải -->
+            <script>
+                var images = Array.from(document.querySelectorAll('#myDiv img'));
+                var currentIndex = images.length - 1;
+
+                function showImage(index) {
+                    images.forEach((img, i) => img.style.display = i === index ? 'block' : 'none');
+                }
+
+                document.querySelector('#prev').addEventListener('click', function () {
+                    currentIndex = (currentIndex - 1 + images.length) % images.length;
+                    showImage(currentIndex);
+                });
+
+                document.querySelector('#next').addEventListener('click', function () {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    showImage(currentIndex);
+                });
+
+                showImage(currentIndex);</script>
+        </div>
+        <div class="main-conten">
+            <h1>Main-Conten co bat chia trang khac<span> Buon huhu</span></h1>
+            <style>
+                .main-conten h1 {
+                    color: white;
+                    text-align: center;
+                    font-size: 100px;
+                }
+
+                .main-conten span {
+                    color: black;
+                }
+
+                .main-conten {
+                    background-color: rgb(200, 200, 200);
+                    width: 100%;
+                    height: 1000px;
+                }
+            </style>
+        </div>
+        <div class="sent-Email">
+            <div class="main-cont">Đăng ký nhận tin từ ShopDunk</div>
+            <div class="bieuNgu"><p>Thông tin sản phẩm mới nhất và chương trình khuyến mãi</p></div>
+            <div class="Input-Email">
+                <input type="email" placeholder="Nhập email của bạn" />
+                <button>Đăng ký</button>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="div-block">
+                <div class="Logo"><img src="https://shopdunk.com/images/thumbs/0012445_Logo_ShopDunk.png" alt="shopdunk"></div>
+                <p>Năm 2020, ShopDunk trở thành đại lý ủy quyền của Apple. Chúng tôi phát triển chuỗi cửa hàng tiêu chuẩn và Apple Mono Store nhằm mang đến trải nghiệm tốt nhất về sản phẩm và dịch vụ của Apple cho người dùng Việt Nam</p>
+                <a href="#" class="Lienhe"><img src="https://shopdunk.com/Themes/SD/Content/images/Face.png" alt="facebook"></a>
+                <a href="#" class="Lienhe"><img src="https://shopdunk.com/Themes/SD/Content/images/Youtube.png" alt="youtube"></a>
+                <a href="#" class="Lienhe"><img src="https://shopdunk.com/Themes/SD/Content/images/Zalo.png" alt="Zalo"></a>
+            </div>
+            <div class="div-block1">
+                <div id="main"><h3>Thong tin</h3></div>
+                <div id="call"><a href="#">Tin tuc</a></div>
+                <div id="call"><a href="#">gioi thieu</a></div>
+                <div id="call"><a href="#">check IMEI</a></div>
+                <div id="call"><a href="#">Phuong thuc thanh toan</a></div>
+                <div id="call"><a href="#">thue diem ban le</a></div>
+                <div id="call"><a href="#">Bao hanh va sua chua</a></div>
+                <div id="call"><a href="#">tuyen dung</a></div>
+                <div id="call"><a href="#">danh gia chat luong, khieu nai</a></div>
+            </div>
+            <div class="div-block2">
+                <div id="main"><h3>Thong tin</h3></div>
+                <div id="call"><a href="#">Tin tuc</a></div>
+                <div id="call"><a href="#">gioi thieu</a></div>
+                <div id="call"><a href="#">check IMEI</a></div>
+                <div id="call"><a href="#">Phuong thuc thanh toan</a></div>
+                <div id="call"><a href="#">thue diem ban le</a></div>
+                <div id="call"><a href="#">Bao hanh va sua chua</a></div>
+                <div id="call"><a href="#">tuyen dung</a></div>
+                <div id="call"><a href="#">danh gia chat luong, khieu nai</a></div>
+            </div>
+            <div class="div-block3">
+                <div id="main"><h3>Thong tin</h3></div>
+                <div id="call"><a href="#">Tin tuc</a></div>
+                <div id="call"><a href="#">gioi thieu</a></div>
+                <div id="call"><a href="#">check IMEI</a></div>
+                <div id="call"><a href="#">Phuong thuc thanh toan</a></div>
+                <div id="call"><a href="#">thue diem ban le</a></div>
+                <div id="call"><a href="#">Bao hanh va sua chua</a></div>
+                <div id="call"><a href="#">tuyen dung</a></div>
+                <div id="call"><a href="#">danh gia chat luong</a></div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
